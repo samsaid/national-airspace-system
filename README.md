@@ -20,7 +20,7 @@ Given the data set in flights.csv where 722 flights are given, I’ve calculated
 
 Graph visualized with Python Networkx library:
 
-![Screenshot](screenshot.png)
+![Screenshot](flightgraph.png)
 
 
 After constructing a graph with such vertices, and the edges holding their flight capacities, the graph is now ready to be used to calculate the maximum flow in consideration of the constraints. As LAX is the starting airport and JFK is the ending airport, we know that flights can travel between any of the airports in any amount of time as long as:
