@@ -1,7 +1,7 @@
 # National Airspace System
 A simplified model of the National Airspace System 
 
-#### Problem ####
+### Problem ###
 Given a data set with flights, calculate the maximum number of passengers that can travel from the source to the destination in 24 hours from 0:00 to 23:59.
 
 #### Constraints ####
@@ -16,7 +16,7 @@ Where G is a directed graph:
 - {V} = [(source airport, departing time), (destination airport, arrival time),...]
 - {E} = [(((source airport, departing time), (destination airport, arrival time)):flight capacity),...]
 
-Given the data set flights.csv where 722 flights are given, I’ve calculated a total of 321 unique vertices and 722 edges.
+Given the data set in flights.csv where 722 flights are given, I’ve calculated a total of 321 unique vertices and 722 edges.
 
 Graph visualized with Python Networkx library:
 
@@ -35,8 +35,8 @@ Since in my graph each vertice is paired up with their designated start or end t
 
 #### Approach ####
 To calculate the maximum number of passengers: begin each path at the start vertex and traverse over the graph. In each path,  I will prioritize filling my flights with as many passengers my edge allows by using a greedy approach when selecting which edge to take:
-Choose the earliest available flight/edge, as long as it satisfies the condition of time regarding the next departing flight
-Choosing the largest available flight/edge capacity, as long as it adheres to the bottleneck capacity of the path 
+- Choose the earliest available flight/edge, as long as it satisfies the condition of time regarding the next departing flight
+- Choosing the largest available flight/edge capacity, as long as it adheres to the bottleneck capacity of the path 
 
 By using this approach exhaustively, I can calculate the maximum number of passengers that can be pushed from the start to the sink of each path. Since paths can use any edge available to them during their decision making, which may include going to a "previous” vertex which would be considered backward labeling. Allowing for backward labeling allows for passengers to take different routes/edges and utilize other capacities for the maximum achievable flow result. Thus, the algorithm best for calculating the maximum number of passengers would be to use the max-flow min-cut algorithm, Ford Fuklerson, which uses a greedy-approach in every local decision to find the maximum flow solution for the entire graph. In this problem, I will be referring to the passengers as flow in our network, and the network as our directed graph.
 
