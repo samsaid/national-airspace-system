@@ -1,7 +1,7 @@
 # national-airspace-system
-# Simplified model of the National Airspace System
+## Simplified model of the National Airspace System
 
-# Problem
+## Problem
 Given a data set with flights, calculate the maximum number of passengers that can travel from the source to the destination in 24 hours from 0:00 to 23:59.
 
 # Constraints
