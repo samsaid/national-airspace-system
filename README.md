@@ -41,17 +41,19 @@ By using this approach exhaustively, I can calculate the maximum number of passe
 
 #### Algorithm ####
 Create a directed graph G=(V,E)
-Traverse through G and set all initial flow to 0, marking start as labeled and other internal and sink vertices as unlabeled 
-Find all possible paths from LAX to JFK by traversing through G with bfs
-To find a path: find a vertex that’s unlabeled and mark it once it has been accessed in a path
-During a pathfinding, use the greedy approach of selecting:
-the edge available with the largest available flight capacity
-the vertice with the earliest departing time in order to have as many flight make it to the end before the 24hrs
-in this step, always check for the conditional case: if destination arrival time is <= departing time
-Once a path is found and a path is at the sink, backtrack by following the labels that you’ve previously marked to s. 
-If all edges have been labeled, halt.
-Maximum flow (maximum amount of passengers that can make it from LAX to JFK in 24hrs) += "path flow" (each path's bottleneck capacity/how many passengers a path carried at a time)
 
-Time/Space Complexity
-Project still in progress.  
+Traverse through G and set all initial flow to 0, marking start as labeled and other internal and sink vertices as unlabeled 
+
+Find all possible paths from LAX to JFK by traversing through G with bfs
+
+To find a path: find a vertex that’s unlabeled and mark it once it has been accessed in a path
+
+During a pathfinding, use the greedy approach of selecting:
+- the edge available with the largest available flight capacity
+- the vertice with the earliest departing time in order to have as many flight make it to the end before the 24hrs
+in this step, always check for the conditional case: if destination arrival time is <= departing time
+
+Once a path is found and a path is at the sink, backtrack by following the labels that you’ve previously marked to s. If all edges have been labeled, halt.
+
+Maximum flow (maximum amount of passengers that can make it from LAX to JFK in 24hrs) += "path flow" (each path's bottleneck capacity/how many passengers a path carried at a time)
 
