@@ -20,8 +20,7 @@ Given the data set in flights.csv where 722 flights are given, I’ve calculated
 
 Graph visualized with Python Networkx library:
 
-
-
+![Screenshot](screenshot.png)
 
 
 After constructing a graph with such vertices, and the edges holding their flight capacities, the graph is now ready to be used to calculate the maximum flow in consideration of the constraints. As LAX is the starting airport and JFK is the ending airport, we know that flights can travel between any of the airports in any amount of time as long as:
@@ -33,7 +32,7 @@ I.e (JFK,7) or (JFK,14)
 
 Since in my graph each vertice is paired up with their designated start or end time, we know there will be more than one of each airport if the data set contains an airport with more than one start or end time. For simplicity, in the figure above, each start is colored green, each sink is colored red, and all other internal nodes are blue. Edge labels displaying the capacity have been turned off in this image for better visualization.
 
-#### Approach ####
+### Approach ###
 To calculate the maximum number of passengers: begin each path at the start vertex and traverse over the graph. In each path,  I will prioritize filling my flights with as many passengers my edge allows by using a greedy approach when selecting which edge to take:
 - Choose the earliest available flight/edge, as long as it satisfies the condition of time regarding the next departing flight
 - Choosing the largest available flight/edge capacity, as long as it adheres to the bottleneck capacity of the path 
