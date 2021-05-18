@@ -1,13 +1,13 @@
 # national-airspace-system
 ## Simplified model of the National Airspace System
 
-## Problem ##
+# Problem #
 Given a data set with flights, calculate the maximum number of passengers that can travel from the source to the destination in 24 hours from 0:00 to 23:59.
 
 # Constraints #
-A passenger can only travel from LAX to JFK
-For multi-stop flights, the arrival time from a flight must be <= the departure time of the next flight
-If the capacity in an edge holds true for at least one passenger, then the capacity of the system is at least 1
+- A passenger can only travel from LAX to JFK
+- For multi-stop flights, the arrival time from a flight must be <= the departure time of the next flight
+- If the capacity in an edge holds true for at least one passenger, then the capacity of the system is at least 1
 
 # Understanding the problem
 In the dataset, there are 5 values given: source airport, destination airport, departure time, arrival time, and flight capacity of each flight. In order to find the maximum number of passengers, I believed it would be best to create a graph data structure representing the vertices as combined airport/time and the edges as the flight capacity.
