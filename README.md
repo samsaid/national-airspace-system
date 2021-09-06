@@ -1,5 +1,5 @@
 # National Airspace System
-A simplified model of the National Airspace System 
+Project for CSE 450: Algorithm Analysis and Design - This repository contains a simplified model of the National Airspace System using the Ford Fulkerson Algorithm and a visualization with python graph Networkx library.
 
 ### Problem ###
 Given a data set with flights, calculate the maximum number of passengers that can travel from the source to the destination in 24 hours from 0:00 to 23:59.
